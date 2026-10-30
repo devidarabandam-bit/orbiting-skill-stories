@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- All personal portfolio content lives in `src/config/site.ts` and `src/config/blog.ts`; components only render config — so the owner can edit content in one place.
