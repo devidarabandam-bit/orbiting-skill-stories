@@ -110,8 +110,8 @@ export function Terminal() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => {
-                  if (e.key === "ArrowUp" && history.length) { e.preventDefault(); const n = Math.min(hIdx + 1, history.length - 1); setHIdx(n); setInput(history[n]); }
-                  if (e.key === "ArrowDown") { e.preventDefault(); const n = hIdx - 1; setHIdx(n); setInput(n >= 0 ? history[n] : ""); }
+                  if (e.key === "ArrowUp" && history.length) { e.preventDefault(); const n = Math.min(hIdx + 1, history.length - 1); setHIdx(n); setInput(history[n] ?? ""); }
+                  if (e.key === "ArrowDown") { e.preventDefault(); const n = hIdx - 1; setHIdx(n); setInput(n >= 0 ? (history[n] ?? "") : ""); }
                 }}
                 autoComplete="off"
                 spellCheck={false}
