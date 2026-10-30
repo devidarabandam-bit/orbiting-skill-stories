@@ -185,11 +185,11 @@ export function Contact() {
             ) : (
               <form onSubmit={submit} noValidate className="grid gap-4">
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <div><label htmlFor="c-name" className="mb-1 block text-sm">Full Name</label><Input {...field("name")} />{errors.name && <p className="mt-1 text-xs text-destructive">{errors.name}</p>}</div>
-                  <div><label htmlFor="c-email" className="mb-1 block text-sm">Email Address</label><Input type="email" {...field("email")} />{errors.email && <p className="mt-1 text-xs text-destructive">{errors.email}</p>}</div>
+                  <div><label htmlFor="c-name" className="mb-1 block text-sm">Full Name</label><Input {...field("name")} />{errors["name"] && <p className="mt-1 text-xs text-destructive">{errors["name"]}</p>}</div>
+                  <div><label htmlFor="c-email" className="mb-1 block text-sm">Email Address</label><Input type="email" {...field("email")} />{errors["email"] && <p className="mt-1 text-xs text-destructive">{errors["email"]}</p>}</div>
                 </div>
-                <div><label htmlFor="c-subject" className="mb-1 block text-sm">Subject</label><Input {...field("subject")} />{errors.subject && <p className="mt-1 text-xs text-destructive">{errors.subject}</p>}</div>
-                <div><label htmlFor="c-message" className="mb-1 block text-sm">Message</label><Textarea rows={6} {...field("message")} />{errors.message && <p className="mt-1 text-xs text-destructive">{errors.message}</p>}</div>
+                <div><label htmlFor="c-subject" className="mb-1 block text-sm">Subject</label><Input {...field("subject")} />{errors["subject"] && <p className="mt-1 text-xs text-destructive">{errors["subject"]}</p>}</div>
+                <div><label htmlFor="c-message" className="mb-1 block text-sm">Message</label><Textarea rows={6} {...field("message")} />{errors["message"] && <p className="mt-1 text-xs text-destructive">{errors["message"]}</p>}</div>
                 <input type="text" tabIndex={-1} autoComplete="off" aria-hidden className="hidden" value={form.website} onChange={(e) => setForm({ ...form, website: e.target.value })} name="website" />
                 {state === "error" && <p className="text-sm text-destructive">Messaging isn't set up yet — please reach out on GitHub for now.</p>}
                 <Button type="submit" variant="hero" size="xl" disabled={state === "sending"}>
